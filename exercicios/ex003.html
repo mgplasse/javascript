@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX003 CURSO EM VÍDEO</title>
+    <style>
+        body {
+  background-color: rgb(73, 158, 123);  
+  color: black;
+  text-shadow: 1px 1px 1px rgb(49, 45, 109);
+  font-weight: normal;
+  font-size: 1.6em;
+}
+h1, h2 {
+  font-size: 2em;
+  color: brown;
+}
+    </style>
+</head>
+<body>
+    <h1>Formatando STRINGS</h1>
+<p>var s = ' JavaScript'</p>  
+<ul>
+  <li>' ou "Eu estou aprendendo s" ou ' -> <strong>Não faz interpolação</strong></li>
+  <li>'Eu estou aprendendo' + s -> <strong>Usa concatenação</strong></li>
+  <li>`Estou aprendendo ${s}` -> <strong> usa template string</strong></li>
+</ul>
+
+<h2>Another formatations</h2>
+<p>s.lengt // Quantos caracteres existe na string</p>
+<p>s.toUpperCase // Transformar em letra maiuscula</p>
+<p>s.toLowerCase // Transformar tudo em letra minúscila</p>
+
+<p>// Note que há um + ao lado da das palavras, este mais significa para fazer uma concatenação (junção das palavras, em termos de espaço)</p>
+<p>// Para fazer uma soma (adição) o + também é utilizado, porém há a seguinte regra:</p>
+Utilizando o + para concatenação
+<ul>
+  <li>// window.alert('É um grande prazer te conhecer, ' + nome + '!')</li>
+  <li>Note que quando há as 'aspas' é uma string, portanto ele considera para juntar as palavras</li>
+</ul>
+Utilizando o + para somas/adição
+<ul>
+  <li>É preciso estar [number+number]</li>
+  <li> Porém, WINDOW.PROPT ele só recebe um valor string, portanto, converter o string para number!</li>
+  
+<h2>Number()</h2>
+  <p>Para transformar o [string -> number], devemos utilizar o NUMBER, e o próprio javascript decide se a resposta será número inteiro ou número real, porém, podemos definir regras para ser apenas uma das respostas, abaixo</p>
+  
+<h2>Number.parseInt(n) ou Number.parseFloat(n)</h2>
+<!--   <p>Método para manipulação/conversão do STRING >> NUMERO <strong>INTEIRO</strong> -->
+  Para utilizar apenas números inteiros
+  <li>Number.parseInt( dentro dos parentesis, utilizar a funcao desejada, neste caso window.prompt)</li>
+  Para utilizar números reais (com casas decimais)
+  <li>Number.parseFloat (dentro dos parentesis, utilizar a função desejada, neste caso, window.prompt)</li>
+  
+  <h2> Conversão de number para string</h2>
+  <p>String(n)</p>
+  <p>n.toString(n)</p>
+  
+// Por exemplo //
+  <p><strong>window.alert('A some dos valores é ' + soma )</strong></p>
+  Podemos fazer de duas maneiras
+  <ul>
+    <li>window.alert('A some dos valores é ' + <strong>soma.toString</strong> )</li>
+    <li>window.alert('A some dos valores é ' + <strong>String(soma)</strong>)</li>
+  </ul
+   
+  <h2>Possível substituição</h2>    
+  <p>Entre costumes do antigo javascript e o mais atualizado pelo ECMA</p>
+  <p>Podemos utilizar o script do java da forma de concatenação citado acima, e também com os placeholders, de forma que fique praticamente um shorthand, e com mesma eficiencia, porém, mais organizado!
+  Note a diferença:</p>
+  <ul>
+    <li>> ' O aluno ' + nome + 'que possui ' + idade + ' tirou a nota ' + nota!</li>
+    <li>`O aluno <strong>${nome}</strong> que possui <strong>${idade}</strong> tirou a nota <strong>${nota}</strong>!</li>
+  </ul>
+  <p>Ambas, possuem o mesmo resultado!</p>
+
+<script>
+    var n1 = Number(window.prompt('Digite um número'))
+    var n2 = Number(window.prompt('Digite outro número'))
+    var soma = n1 + n2
+    window.alert(` A soma de ${n1} e ${n2} = ${soma} `)
+    </script>
+    
+</body>
+</html>

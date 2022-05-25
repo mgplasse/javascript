@@ -9,11 +9,14 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 25px;
-            background-color: lightgrey;
+            background-color: rgb(158, 154, 154);
 
         }
-        h1, h2 {
+        h1 {
             font-size: 2em;
+        }
+        h2 {
+            font-size: 1.5em;
         }
     </style>
 </head>
@@ -23,7 +26,9 @@
     <ul>
         <li>Aritméticos</li> <br>
         Utilizando {+, -, *, /, %, & **} <br>
-        A ordem de precedência -> () -> ** -> *, /, % --> + - 
+        A ordem de precedência -> () -> ** -> *, /, % --> + - <br>
+        <img src="imagem/ex05/Screenshot_19.png" alt="precedencia após aula02"> <br>
+        Após a aula 02, identificado a ordem de precedencia correta após calcular os aritméticos
         <li>Atribuição</li>  
         <ul>
             <li>Atribuição Simples:</li>
@@ -43,10 +48,96 @@
         <h2>Aula 02 - ex006 </h2>
         <li>Relacionais</li>
         <ul>
-            <li>Operadores básicos: "> (maior)" "< (menor)" ">= (maior ou igual)" "<= (menor ou igual)" "==(identico)" "!=" </li>
+            <li>Operadores básicos: <br>
+                "> (maior)" "< (menor)" ">= (maior ou igual)" "<= (menor ou igual)" "==(valor de igualdade no js)" "!=(diferente)"
+            <p>Para cada expressão que tenha operador relacional ligada a ela, o resultado a ela vai ser sempre uma expressão booleano! (Verdadeiro ou falso /true or false)</p>
+            <quote>
+                5 > 2 -> true <br>
+                7 < 4 -> false <br>
+                8 >= 8 -> true <br>
+                9 <= 7 -> false <br>
+                5 == 5 -> true <br>
+                4 != 4 -> false <br> <br>
+            </quote>
+            Exemplos: <br>
+            preço >= 200.50 // o preço é maior ou igual a 200.50 ? <br>
+            idade < 18 // A pessoa é menor de 18? <br>
+            curso == 'JavaScript' // Curso é Javascript? <br>
+            n1 != n2 // Numero 1 é diferente do número 02? <br>
+            </li>
+            <li>Para operador de IDENTIDADE: <br>
+                5 == 5 -> true <br>
+                5 == '5' -> true <br>
+                Note agora o operador de igualdade restrita, no qual há 3 sinais de igual (=) <br>
+                <strong>ex: 5 === '5' -> false</strong> <br>
+                Por conta de ser um 5 numéric e um 5 string, nao há igualdade! <br> <br>
+                Exemplo: <br>
+                5 == '5' -> TRUE <br>
+                var x = 5 <br>
+                var y = '5' <br>
+                typeof x -> 'number' <br>
+                typeof y -> 'string' <br>
+                x == y -> TRUE <br>
+                x === y -> FALSE <br>
+                x != y -> FALSE <br>
+                x !== <em>(desigual restrito)</em> y -> TRUE <br><br>
+            </p>
+            </li>
         </ul>
         <li>Lógicos</li>
+        <ul>
+            <li>! -> <strong>NEGAÇÃO</strong> <br><br>
+                Tratado como operador UNÁRIO <br>
+                <img src="imagem/ex05/Screenshot_16.png" alt="exemplo imagem NEGAÇÃO"> <br>
+                Só tem um operando, após a exclamação só vai ter TRUE or FALSE. <br>
+                Uma coisa que nao é verdadeira, é falsa <br>
+                Uma coisa que nao é falsa, é verdadeira <br><br>
+            </li>
+            <li>&& -> <strong>CONJUNÇÃO</strong> <br><br>
+                Assim como o operador de disjunção, este é um operador binário, na qual possuimos dois valores lógicos, um de cada lado. <br>
+                <img src="imagem/ex05/Screenshot_17.png" alt="Imagem exemplo de Conjunção"> <br>
+                <strong>Basta para que um deles seja false, para que o resultado seja false <br></strong>
+                Exemplo de que eu quero uma caneta azul e uma vermelha. <br>
+                Se eu conseguir as duas, true <br>
+                Se eu conseguir uma azul mas não a vermelha, false <br>
+                Se eu só conseguir a vermelha mas não a azul, false <br>
+                Se eu não conseguir nenhuma, false       <br><br>
+            </li>
+            <li>|| (barra do lado do Z) -> <strong>DISJUNÇÃO</strong> <br><br>
+                <img src="imagem/ex05/Screenshot_18.png" alt="Imagem exemplo Disjunção"> <br>
+                Praticamente o contrário do de Conjunção! <br>
+                <strong>Basta para que um deles seja verdadeiro, para que o resultado seja verdadeiro</strong>
+            </li> <br>
+            Exemplo: <br>
+            var a = 5 <br>
+            var b = 8 <br>
+            true && false -> FALSE <br>
+            true && true -> TRUE <br>
+            false || false -> FALSE <br>
+            true || false -> TRUE <br>
+            true || true -> TRUE <br>
+            a > b && b % 2 == 0 // <strong>FOCA NISSO, quando temos opradores aritméticos, relacionais e lógicos na mesma operação. <em>Iremos fazer primeiro os ARITMÉTICOS, depois os RELACIONAIS e então os LÓGICOS</em></strong> <br>
+            a > b && b % 2 == 0 -> FALSE <br>
+            a > b || b / 2 == 2 -> TRUE <br><br>
+            // Outros exemplos // <br>
+            Idade >= 15 && idade <= 17 // a idade está entre 15 e 17? <br>
+            estado == 'RJ' || estado == 'SP' // O estado é RJ ou SP? <br>
+            salário = 1500 && sexo != 'M' // salário é acima de 1500 e não é homem ? (M de masculino, ao lado) <br>
+            <br>
+        </ul>
         <li>Ternário</li>
+            <ul>
+                <li>?</li>
+                <li>:</li>
+            </ul>
+                "( teste ? true : false )" <br>
+            var média = 5.5 <br>
+            média => 7.0?"Aprovado":"Reprovado" <br>
+            <br>
+            var x = 8 <br>
+            var res = x % 2 == 0 ? 5 : 9 <br>
+            res -> 5 <br>
+            <strong>[[referencia do código SE do excel =) ]] </strong>
     </ul>
     
 

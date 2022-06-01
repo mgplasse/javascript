@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02 - DOM</title>
+    <style>
+        body {
+            background-color: lightgrey;
+        }
+        div#area {
+            background: lightgreen;
+            color: white;
+            font: bold 20px Tahoma;
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            line-height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aula 02 - EVENTOS DOM</h1>
+    <!-- <div id="area" onclick="clicar()" onmouseenter="entrou()" onmouseout="saiu()"> -->
+    <div id="area">
+        Interaja...
+    </div>
+    <p>Há 6 eventos que podem acontecer apenas com o mouse interagindo com um botão. <br>
+    Sendo eles; <br>
+mouseenter; mousemove; mousedown; mouseup; click; mouseout</p>
+<p>Eventos de javascript -> <a href="https://developer.mozilla.org/pt-BR/docs/Web/Events">Lista do MDN</a></p>
+<p>Funções;
+    function ação(parametros) { <br>
+        <br>
+    }
+</p>
+<h1>Aula 10 - Na prática - DOM</h1>
+<input type="number" name="txtn1" id="txtn1">
+<input type="number" name="txtn2" id="txtn2">
+<input type="button" value="Dividir" onclick="somar()">
+<div id="res"></div>
+
+<script>
+    function somar() {
+        var v1 = window.document.getElementById('txtn1')
+        var v2 = window.document.getElementById('txtn2')
+        var res = window.document.getElementById('res')
+        var n1 = Number(v1.value)
+        var n2 = Number(v2.value)
+        var s = n1 / n2
+        res.innerHTML = `A divisão de ${n1} por ${n2} é igual a ${s}`
+    }
+
+
+
+    var a = window.document.getElementById('area')
+    a.addEventListener('click', clicar)
+    a.addEventListener('mouseenter', entrou)
+    a.addEventListener('mouseout', saiu)
+    
+    function clicar() {
+        a.innerText = 'Clicou!'
+        a.style.background = 'darkred'
+    }
+    function entrou() {
+        a.innerText = 'Você entrou!'
+    }
+    function saiu() {
+        a.innerText = 'Você saiu!'
+    }
+
+</script>
+</body>
+</html>

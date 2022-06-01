@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background-color: beige;
+        }
+        p {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aula 09 - D.O.M</h1>
+    <h2>What is DOM?</h2>
+    <p>DOM is a abbreviation for "Document Object Model"</p>
+    <h1>DOM só roda dentro do JS, quando estiver no HTML.</h1>
+    <p>Você deve aprender a fazer a sua árvore <strong>DOM</strong> (árvore genealógica do window)</p>
+    <ul>
+        <li>window</li>
+        <ul>
+            <li>location</li>
+            <li>history</li>
+            <li>document</li>
+            <ul>
+                <li>html</li>
+                <ul>
+                    <li>head</li>
+                    <ul>
+                        <li>meta</li>
+                        <li>title</li>
+                    </ul>
+                    <li>body</li>
+                    <ul>
+                        <li>h1</li>
+                        <li>h2</li>
+                        <li>p(0)</li>
+                        <li>p(1)</li>
+                        <li>div</li>
+                    </ul>
+                </ul>
+            </ul>
+        </ul>
+    </ul>
+
+    <h1>Meios de selecionar:</h1>
+    <p>Por <strong>marca</strong>[TAG] -> getElementsByTagName()<br>
+        Por <strong>ID</strong> -> getElementById()  // note que essa nao tem o S em Element, pois nao há mais de um ID igual<br>
+        Por <strong>nome</strong> -> getElementsByClassName()<br>
+        Por <strong>classe</strong> -> getElementsBy<br>
+        Por <strong>seletor</strong> <br>
+    </p>
+    <div id="teste">Clique aqui</div>
+    <script>
+        var corpo = window.document.body
+        var p1 = document.getElementsByTagName('p')[1]
+        document.write('Eu quis assim: ' + p1.innerHTML) 
+        corpo.style.background = 'lightpink'
+        //document.write(p1.innerText)
+
+        var y = window.document.getElementById('teste')
+        y.style.background = 'green'
+        // y.innerText = 'Estou aguardando...'
+        // window.document.getElementById('teste').innerText = 'Olá' [[[ pode ser escrito assim, porém o código fica grande]]]
+    </script>
+
+
+</body>
+</html>
